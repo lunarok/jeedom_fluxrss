@@ -22,14 +22,21 @@ if (!jeedom::apiAccess(init('apikey'), 'fluxrss')) {
     die();
 }
 
+$addr = init('id');
+$eqLogic = fluxrss::byLogicalId($addr,'fluxrss');
+ if (!is_object($eqLogic)) {
+ 	echo json_encode(array('text' => __('Id inconnu : ', __FILE__) . init('addr')));
+ 	die();
+ }
+
 $rssfeed = '<?xml version="1.0" encoding="ISO-8859-1"?>';
 $rssfeed .= '<rss version="2.0">';
 $rssfeed .= '<channel>';
 $rssfeed .= '<title>Jeedom RSS</title>';
 $rssfeed .= '<link>http://www.mywebsite.com</link>';
 $rssfeed .= '<description>This is an example RSS feed</description>';
-$rssfeed .= '<language>en-us</language>';
-$rssfeed .= '<copyright>Copyright (C) 2009 mywebsite.com</copyright>';
+$rssfeed .= '<language>fr</language>';
+$rssfeed .= '<copyright>Copyright (C) 2017 Jeedom</copyright>';
 
 while($row = mysql_fetch_array($result)) {
     extract($row);

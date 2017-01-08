@@ -17,13 +17,6 @@ if ($state == 1) {
     <div class="bs-sidebar">
       <ul id="ul_eqLogic" class="nav nav-list bs-sidenav">
         <a class="btn btn-default eqLogicAction" style="width : 100%;margin-top : 5px;margin-bottom: 5px;" data-action="add"><i class="fa fa-plus-circle"></i> {{Ajouter un équipement}}</a>
-        <?php
-        if ($state == 1) {
-          echo ' <a class="btn btn-success tooltips changeIncludeState" title="{{Inclure périphérique RF}}" data-state="0" style="width : 100%;margin-bottom : 5px;"><i class="fa fa-sign-in fa-rotate-90"></i> {{Arrêter inclusion}}</a>';
-        } else {
-          echo ' <a class="btn btn-default tooltips changeIncludeState" title="{{Inclure périphérique RF}}" data-state="1" style="width : 100%;margin-bottom : 5px;"><i class="fa fa-sign-in fa-rotate-90"></i> {{Mode inclusion}}</a>';
-        }
-        ?>
         <li class="filter" style="margin-bottom: 5px;"><input class="filter form-control input-sm" placeholder="{{Rechercher}}" style="width: 100%"/></li>
         <?php
         foreach ($eqLogics as $eqLogic) {
@@ -35,28 +28,9 @@ if ($state == 1) {
   </div>
 
   <div class="col-lg-10 col-md-9 col-sm-8 eqLogicThumbnailDisplay" style="border-left: solid 1px #EEE; padding-left: 25px;">
-    <legend><i class="fa fa-cog"></i>  {{Gestion}}</legend>
-    <div class="eqLogicThumbnailContainer">
-      <div class="cursor eqLogicAction" data-action="gotoPluginConf" style="background-color : #ffffff; height : 140px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;">
-        <center>
-          <i class="fa fa-wrench" style="font-size : 5em;color:#767676;"></i>
-        </center>
-        <span style="font-size : 1.1em;position:relative; top : 23px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676"><center>{{Configuration}}</center></span>
-      </div>
-      <div class="cursor" id="bt_healthRflink" style="background-color : #ffffff; height : 120px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >
-        <center>
-          <i class="fa fa-medkit" style="font-size : 5em;color:#767676;"></i>
-        </center>
-        <span style="font-size : 1.1em;position:relative; top : 15px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;color:#767676"><center>{{Santé}}</center></span>
-      </div>
-    </div>
 
     <legend><i class="fa fa-table"></i>  {{Mes flux RSS}}</legend>
-    <?php
-    if (count($eqLogics) == 0) {
-      echo "<br/><br/><br/><center><span style='color:#767676;font-size:1.2em;font-weight: bold;'>{{Aucun fluxrss détecté, démarrer un node pour ajout}}</span></center>";
-    } else {
-      ?>
+
       <div class="eqLogicThumbnailContainer">
         <div class="cursor eqLogicAction" data-action="add" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;" >
           <center>
@@ -144,8 +118,10 @@ if ($state == 1) {
             <tr>
               <th style="width: 50px;">#</th>
               <th style="width: 150px;">{{Nom}}</th>
-              <th style="width: 110px;">{{valeur}}</th>
-              <th style="width: 200px;">{{Paramètres}}</th>
+              <th style="width: 150px;">{{Info de référence}}</th>
+              <th style="width: 200px;">{{Titre}}</th>
+              <th style="width: 250px;">{{Contenu}}</th>
+              <th style="width: 150px;">{{Paramètres}}</th>
               <th style="width: 100px;"></th>
             </tr>
           </thead>
@@ -156,7 +132,6 @@ if ($state == 1) {
 
         <div class="form-actions">
           <a class="btn btn-success btn-sm cmdAction" id="bt_addfluxrssInfo"><i class="fa fa-plus-circle"></i> {{Ajouter une commande info}}</a>
-          <a class="btn btn-success btn-sm cmdAction" id="bt_addfluxrssAction"><i class="fa fa-plus-circle"></i> {{Ajouter une commande action}}</a>
         </div>
 
       </div>
@@ -166,11 +141,3 @@ if ($state == 1) {
 
 <?php include_file('desktop', 'fluxrss', 'js', 'fluxrss'); ?>
 <?php include_file('core', 'plugin.template', 'js'); ?>
-
-<script>
-$( "#sel_icon" ).change(function(){
-  var text = 'plugins/fluxrss/doc/images/node_' + $("#sel_icon").val() + '.png';
-  //$("#icon_visu").attr('src',text);
-  document.icon_visu.src=text;
-});
-</script>
