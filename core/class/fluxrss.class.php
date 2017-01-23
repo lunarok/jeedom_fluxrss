@@ -22,7 +22,9 @@ class fluxrss extends eqLogic {
     public static function cron5() {
         $eqLogics = eqLogic::byType('fluxrss', true);
         foreach ($eqLogics as $eqLogic) {
-            //check every cmd if cron and match, update
+            foreach ($eqLogic->getCmd('info') as $cmd) {
+                
+            }
         }
     }
 
