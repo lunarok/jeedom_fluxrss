@@ -19,6 +19,13 @@ require_once dirname(__FILE__) . '/../../../../core/php/core.inc.php';
 
 class fluxrss extends eqLogic {
 
+    public static function cron5() {
+        $eqLogics = eqLogic::byType('fluxrss', true);
+        foreach ($eqLogics as $eqLogic) {
+            //check every cmd if cron and match, update
+        }
+    }
+
 }
 
 class fluxrssCmd extends cmd {
