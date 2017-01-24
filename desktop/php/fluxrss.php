@@ -131,7 +131,7 @@ if ($state == 1) {
               <div class="form-group">
                 <label class="col-sm-3 control-label">{{URL fu RSS}}</label>
                 <div class="col-sm-3">
-                    <?php echo config::byKey('internalAddr'); ?>/plugins/fluxrss/data/<span class="eqLogicAttr" data-l1key="configuration" data-l2key="gateway"></span>
+                    /plugins/fluxrss/data/<span class="eqLogicAttr" data-l1key="configuration" data-l2key="gateway"></span>
                 </div>
               </div>
 
