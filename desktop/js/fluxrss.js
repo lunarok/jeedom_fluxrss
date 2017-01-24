@@ -41,15 +41,7 @@ function addCmdToTable(_cmd) {
     tr += '<span class="cmdAttr" data-l1key="id"></span>';
     tr += '</td>';
     tr += '<td>';
-    tr += '<input class="cmdAttr form-control input-sm" data-l1key="name" style="width : 140px;" placeholder="{{Nom du capteur}}"></td>';
-    tr += '<td>';
-    tr += '<input class="cmdAttr form-control input-sm" data-l1key="reference" style="width : 140px;" placeholder="{{Nom info}}"></td>';
-    tr += '</td>';
-    tr += '<td>';
-    tr += '<input class="cmdAttr form-control input-sm" data-l1key="title" style="width : 140px;" placeholder="{{Titre article}}"></td>';
-    tr += '</td>';
-    tr += '<td>';
-    tr += '<input class="cmdAttr form-control input-sm" data-l1key="content" style="width : 140px;" placeholder="{{Contenu article}}"></td>';
+    tr += '<input class="cmdAttr form-control input-sm" data-l1key="reference" style="width : 140px;" placeholder="{{Nom info}}">';
     tr += '</td>';
     tr += '<span><label class="checkbox-inline"><input type="checkbox" class="cmdAttr checkbox-inline" data-l1key="isVisible" checked/>{{Afficher}}</label></span> ';
     tr += '</td>';

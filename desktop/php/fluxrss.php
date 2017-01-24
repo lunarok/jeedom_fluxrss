@@ -107,6 +107,34 @@ if ($state == 1) {
                 </div>
               </div>
 
+              <div class="form-group">
+                  <label class="col-sm-3 control-label">{{Titre du RSS}}</label>
+                  <div class="col-sm-3">
+                      <input class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="title" type="text" placeholder="{{saisir la quantité maximum du stock}}">
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <label class="col-sm-3 control-label">{{Lien}}</label>
+                  <div class="col-sm-3">
+                      <input class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="link" type="text" placeholder="{{saisir la quantité maximum du stock}}">
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <label class="col-sm-3 control-label">{{Description}}</label>
+                  <div class="col-sm-3">
+                      <input class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="description" type="text" placeholder="{{saisir la quantité maximum du stock}}">
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">{{URL fu RSS}}</label>
+                <div class="col-sm-3">
+                    <?php echo config::byKey('internalAddr'); ?>/plugins/fluxrss/data/<span class="eqLogicAttr" data-l1key="configuration" data-l2key="gateway"></span>
+                </div>
+              </div>
+
           </fieldset>
         </form>
       </div>
@@ -118,9 +146,6 @@ if ($state == 1) {
             <tr>
               <th style="width: 50px;">#</th>
               <th style="width: 150px;">{{Nom}}</th>
-              <th style="width: 150px;">{{Info de référence}}</th>
-              <th style="width: 200px;">{{Titre}}</th>
-              <th style="width: 250px;">{{Contenu}}</th>
               <th style="width: 150px;">{{Paramètres}}</th>
               <th style="width: 100px;"></th>
             </tr>
