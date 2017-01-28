@@ -62,10 +62,7 @@ $eqLogics = eqLogic::byType('fluxrss');
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation"><a href="#" class="eqLogicAction" aria-controls="home" role="tab" data-toggle="tab" data-action="returnToThumbnailDisplay"><i class="fa fa-arrow-circle-left"></i></a></li>
             <li role="presentation" class="active"><a href="#eqlogictab" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-tachometer"></i> {{Equipement}}</a></li>
-            <li role="presentation"><a href="#commandtab" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-list-alt"></i> {{Actions sur fluxrss}}</a></li>
-            <li role="presentation"><a href="#statustab" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-list-alt"></i> {{Statuts}}</a></li>
-            <li role="presentation"><a href="#consotab" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-list-alt"></i> {{Consommations}}</a></li>
-            <li role="presentation"><a href="#pricetab" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-list-alt"></i> {{Prix}}</a></li>
+            <li role="presentation"><a href="#commandtab" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-list-alt"></i> {{Commandes}}</a></li>
         </ul>
         <div class="tab-content" style="height:calc(100% - 50px);overflow:auto;overflow-x: hidden;">
             <div role="tabpanel" class="tab-pane active" id="eqlogictab">
@@ -113,71 +110,24 @@ $eqLogics = eqLogic::byType('fluxrss');
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">{{Type de fluxrss}}</label>
+                            <label class="col-sm-3 control-label">{{Titre du Flux}}</label>
                             <div class="col-sm-3">
-                                <select class="form-control eqLogicAttr configuration" data-l1key="configuration" data-l2key="type">
-                                    <option value="standalone">fluxrss autonome</option>
-                                    <option value="master">fluxrss maître</option>
-                                    <?php
-                                        foreach (eqLogic::byType('fluxrss') as $fluxrss) {
-                                            if ($fluxrss->getConfiguration('type') == "master") {
-                                                echo '<option value="' . $fluxrss->getId() . '">Lié à ' . $fluxrss->getName() . '</option>';
-                                            }
-                                        }
-                                    ?>
-                                </select>
+                                <input class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="title" type="text" placeholder="{{saisir la quantité maximum du fluxrss}}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">{{Lien du Flux}}</label>
+                            <div class="col-sm-3">
+                                <input class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="link" type="text" placeholder="{{saisir la quantité actuelle du fluxrss}}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">{{Description du Flux}}</label>
+                            <div class="col-sm-3">
+                                <input class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="link" type="text" placeholder="{{saisir la quantité actuelle du fluxrss}}">
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">{{fluxrss maximum}}</label>
-                            <div class="col-sm-3">
-                                <input class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="maximum" type="text" placeholder="{{saisir la quantité maximum du fluxrss}}">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">{{fluxrss actuel}}</label>
-                            <div class="col-sm-3">
-                                <input class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="fluxrss" type="text" placeholder="{{saisir la quantité actuelle du fluxrss}}">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">{{Prix unitaire}}</label>
-                            <div class="col-sm-3">
-                                <input class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="price" type="text" placeholder="{{saisir le prix unitaire du fluxrss}}">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">{{Quantité pour les commandes unitaires}}</label>
-                            <div class="col-sm-3">
-                                <input class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="convert" type="text" placeholder="{{saisir la quantité que représente un ajout ou suppression unitaire}">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">{{Jour de début de la semaine}}</label>
-                            <div class="col-sm-3">
-                                <select class="form-control eqLogicAttr" data-l1key="configuration" data-l2key="week">
-                                    <option value="2">{{Lundi}}</option>
-                                    <option value="3">{{Mardi}}</option>
-                                    <option value="4">{{Mercredi}}</option>
-                                    <option value="5">{{Jeudi}}</option>
-                                    <option value="6">{{Vendredi}}</option>
-                                    <option value="7">{{Samedi}}</option>
-                                    <option value="1">{{Dimanche}}</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">{{Commande Notification}}</label>
-                            <div class="col-sm-3">
-                                <div class="input-group">
-                                    <input type="text"  class="eqLogicAttr configuration form-control" data-l1key="configuration" data-l2key="alert" />
-                                    <span class="input-group-btn">
-                                        <a class="btn btn-default cursor" title="Rechercher une commande" id="bt_selectMailCmd"><i class="fa fa-list-alt"></i></a>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
 
                     </fieldset>
                 </form>
@@ -198,57 +148,7 @@ $eqLogics = eqLogic::byType('fluxrss');
                     </tbody>
                 </table>
             </div>
-            <div role="tabpanel" class="tab-pane" id="statustab">
-                <table id="table_status" class="table table-bordered table-condensed">
-                    <thead>
-                        <tr>
-                            <th style="width: 50px;">#</th>
-                            <th style="width: 300px;">{{Nom}}</th>
-                            <th style="width: 160px;">{{Sous-Type}}</th>
-                            <th style="width: 200px;">{{Paramètres}}</th>
-                            <th style="width: 100px;"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
 
-                    </tbody>
-                </table>
-
-            </div>
-            <div role="tabpanel" class="tab-pane" id="consotab">
-                <table id="table_conso" class="table table-bordered table-condensed">
-                    <thead>
-                        <tr>
-                            <th style="width: 50px;">#</th>
-                            <th style="width: 300px;">{{Nom}}</th>
-                            <th style="width: 160px;">{{Sous-Type}}</th>
-                            <th style="width: 200px;">{{Paramètres}}</th>
-                            <th style="width: 100px;"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                    </tbody>
-                </table>
-
-            </div>
-            <div role="tabpanel" class="tab-pane" id="pricetab">
-                <table id="table_price" class="table table-bordered table-condensed">
-                    <thead>
-                        <tr>
-                            <th style="width: 50px;">#</th>
-                            <th style="width: 300px;">{{Nom}}</th>
-                            <th style="width: 160px;">{{Sous-Type}}</th>
-                            <th style="width: 200px;">{{Paramètres}}</th>
-                            <th style="width: 100px;"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                    </tbody>
-                </table>
-
-            </div>
         </div>
     </div>
 </div>
