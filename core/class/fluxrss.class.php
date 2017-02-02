@@ -38,7 +38,7 @@ class fluxrss extends eqLogic {
 		}
     }
 
-    public static function updateRss($item) {
+    public function updateRss($item) {
 
         $rssfeed = '<?xml version="1.0" encoding="ISO-8859-1"?>';
         $rssfeed .= '<rss version="2.0">';
