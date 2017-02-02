@@ -32,6 +32,10 @@ class fluxrss extends eqLogic {
             $stockCmd->setSubType('message');
             $stockCmd->save();
         }
+
+        if (!file_exists(dirname(__FILE__) . '/../../data' . $this->getId())) {
+			$this->updateRss('');
+		}
     }
 
     public static function updateRss($item) {
