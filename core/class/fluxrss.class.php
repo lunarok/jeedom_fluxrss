@@ -20,18 +20,20 @@ require_once dirname(__FILE__) . '/../../../../core/php/core.inc.php';
 class fluxrss extends eqLogic {
 
     public function postUpdate() {
-        $stockCmd = stockCmd::byEqLogicIdAndLogicalId($this->getId(),'element');
-        if (!is_object($stockCmd)) {
-            log::add('stock', 'debug', 'Création de la commande element');
-            $stockCmd = new stockCmd();
-            $stockCmd->setName(__('Nouvel Article', __FILE__));
-            $stockCmd->setEqLogic_id($this->getId());
-            $stockCmd->setEqType('fluxrss');
-            $stockCmd->setLogicalId('element');
-            $stockCmd->setType('action');
-            $stockCmd->setSubType('message');
-            $stockCmd->save();
+        $fluxrssCmd = fluxrssCmd::byEqLogicIdAndLogicalId($this->getId(),'element');
+        if (!is_object($fluxrssCmd)) {
+            log::add('fluxrss', 'debug', 'Création de la commande element');
+            $fluxrssCmd = new fluxrssCmd();
+            $fluxrssCmd->setName(__('Nouvel Article', __FILE__));
+            $fluxrssCmd->setEqLogic_id($this->getId());
+            $fluxrssCmd->setEqType('fluxrss');
+            $fluxrssCmd->setLogicalId('element');
+            $fluxrssCmd->setType('action');
+            $fluxrssCmd->setSubType('message');
+            $fluxrssCmd->save();
         }
+        $url = network::getNetworkAccess('external') . '/plugins/xiaomihome/data/' . $this->getId();
+        $this->setConfiguration('url',$url);
 
         if (!file_exists(dirname(__FILE__) . '/../../data' . $this->getId())) {
 			$this->updateRss('');

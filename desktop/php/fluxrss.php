@@ -127,6 +127,12 @@ $eqLogics = eqLogic::byType('fluxrss');
                                 <input class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="description" type="text">
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">{{URL du flux RSS}}</label>
+                            <div class="col-sm-3">
+                                <span class="eqLogicAttr" data-l1key="configuration" data-l2key="url"></span>
+                            </div>
+                        </div>
 
 
                     </fieldset>
