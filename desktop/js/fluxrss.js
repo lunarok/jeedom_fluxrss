@@ -34,14 +34,14 @@ function addCmdToTable(_cmd) {
     _cmd.configuration = {};
   }
 
-  if (init(_cmd.type) == 'info') {
+  if (init(_cmd.type) == 'action') {
     var disabled = (init(_cmd.configuration.virtualAction) == '1') ? 'disabled' : '';
     var tr = '<tr class="cmd" data-cmd_id="' + init(_cmd.id) + '">';
     tr += '<td>';
     tr += '<span class="cmdAttr" data-l1key="id"></span>';
     tr += '</td>';
     tr += '<td>';
-    tr += '<input class="cmdAttr form-control input-sm" data-l1key="reference" style="width : 140px;" placeholder="{{Nom info}}">';
+    tr += '<input class="cmdAttr form-control input-sm" data-l1key="reference" style="width : 140px;" placeholder="{{Nom commande}}">';
     tr += '</td>';
     tr += '<span><label class="checkbox-inline"><input type="checkbox" class="cmdAttr checkbox-inline" data-l1key="isVisible" checked/>{{Afficher}}</label></span> ';
     tr += '</td>';

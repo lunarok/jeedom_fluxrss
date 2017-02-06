@@ -34,6 +34,7 @@ class fluxrss extends eqLogic {
         }
         $url = network::getNetworkAccess('external') . '/plugins/xiaomihome/data/' . $this->getId();
         $this->setConfiguration('url',$url);
+        $this->save();
 
         if (!file_exists(dirname(__FILE__) . '/../../data' . $this->getId())) {
 			$this->updateRss('');
