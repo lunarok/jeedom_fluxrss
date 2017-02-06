@@ -32,13 +32,16 @@ class fluxrss extends eqLogic {
             $fluxrssCmd->setSubType('message');
             $fluxrssCmd->save();
         }
-        $url = network::getNetworkAccess('external') . '/plugins/xiaomihome/data/' . $this->getId();
-        $this->setConfiguration('url',$url);
-        $this->save();
 
         if (!file_exists(dirname(__FILE__) . '/../../data' . $this->getId())) {
 			$this->updateRss('');
 		}
+    }
+
+    public function postAjax() {
+        $url = network::getNetworkAccess('external') . '/plugins/xiaomihome/data/' . $this->getId();
+        $this->setConfiguration('url',$url);
+        $this->save();
     }
 
     public function updateRss($item) {
