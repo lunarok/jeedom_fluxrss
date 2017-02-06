@@ -64,7 +64,6 @@ class fluxrss extends eqLogic {
             }
         }
         $rssfeed .= $items;
-        $this->save();
 
         $rssfeed .= '</channel>';
         $rssfeed .= '</rss>';
