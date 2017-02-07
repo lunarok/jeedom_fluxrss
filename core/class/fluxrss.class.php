@@ -58,7 +58,6 @@ class fluxrss extends eqLogic {
         for ($i=0; $i < 10; $i++) {
             $index = 10 - $i;
             $previous = $index - 1;
-            log::add('fluxrss', 'debug', 'Index : ' . $index);
             if ($index != 1) {
                 if ($this->getConfiguration('item'.$previous,'') != '') {
                     $items = $this->getConfiguration('item'.$previous,'') . $items;
@@ -67,9 +66,9 @@ class fluxrss extends eqLogic {
                 }
             } else {
                 $items = $item . $items;
-                log::add('fluxrss', 'debug', 'Items : ' . $item);
                 $this->setConfiguration('item0',$item);
             }
+            log::add('fluxrss', 'debug', 'Index : ' . $index . ' - Items : ' . $items);
         }
         $this->save();
         $rssfeed .= $items;
