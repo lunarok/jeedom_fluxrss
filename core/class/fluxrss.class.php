@@ -38,10 +38,9 @@ class fluxrss extends eqLogic {
 		}
     }
 
-    public function postAjax() {
+    public function preSave() {
         $url = network::getNetworkAccess('external') . '/plugins/xiaomihome/data/' . $this->getId();
         $this->setConfiguration('url',$url);
-        $this->save();
     }
 
     public function updateRss($item) {
