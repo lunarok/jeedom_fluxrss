@@ -66,9 +66,9 @@ class fluxrss extends eqLogic {
                 }
             } else {
                 $items = $item . $items;
-                $this->setConfiguration('item0',$item);
+                $this->setConfiguration('item1',$item);
             }
-            log::add('fluxrss', 'debug', 'Index : ' . $index . ' - Items : ' . $items);
+            //log::add('fluxrss', 'debug', 'Index : ' . $index . ' - Items : ' . $items);
         }
         $this->save();
         $rssfeed .= $items;
