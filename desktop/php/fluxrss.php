@@ -144,7 +144,6 @@ $eqLogics = eqLogic::byType('fluxrss');
                         <tr>
                             <th style="width: 50px;">#</th>
                             <th style="width: 300px;">{{Nom}}</th>
-                            <th style="width: 160px;">{{Unité}}</th>
                             <th style="width: 200px;">{{Paramètres}}</th>
                             <th style="width: 100px;"></th>
                         </tr>
