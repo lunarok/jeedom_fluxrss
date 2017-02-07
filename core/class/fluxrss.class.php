@@ -53,6 +53,7 @@ class fluxrss extends eqLogic {
         $rssfeed .= '<description>' . $this->getConfiguration('description') . '</description>';
         $rssfeed .= '<language>fr</language>';
         $rssfeed .= '<copyright>Copyright (C) 2017 Jeedom</copyright>';
+        log::add('fluxrss', 'debug', 'Item : ' . $item);
 
         $items = '';
         for ($i=0; $i < 10; $i++) {
@@ -69,6 +70,7 @@ class fluxrss extends eqLogic {
             }
         }
         $rssfeed .= $items;
+        log::add('fluxrss', 'debug', 'Feed : ' . $rssfeed);
 
         $rssfeed .= '</channel>';
         $rssfeed .= '</rss>';
@@ -97,6 +99,7 @@ class fluxrssCmd extends cmd {
             $item .= '<link>' . $link . '</link>';
             $item .= '<pubDate>' . date("D, d M Y H:i:s O", strtotime('now')) . '</pubDate>';
             $item .= '</item>';
+            log::add('fluxrss', 'debug', 'Item : ' . $item);
             $eqLogic->updateRss($item);
     }
 
