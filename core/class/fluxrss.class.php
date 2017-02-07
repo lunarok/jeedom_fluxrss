@@ -33,9 +33,9 @@ class fluxrss extends eqLogic {
             $fluxrssCmd->save();
         }
 
-        if (!file_exists(dirname(__FILE__) . '/../../data' . $this->getId())) {
+        /*if (!file_exists(dirname(__FILE__) . '/../../data' . $this->getId())) {
 			$this->updateRss('');
-		}
+		}*/
     }
 
     public function preSave() {
@@ -44,7 +44,7 @@ class fluxrss extends eqLogic {
     }
 
     public function updateRss($item) {
-
+        log::add('fluxrss', 'debug', 'Index : ' . $index . ' - Items : ' . $items);
         $rssfeed = '<?xml version="1.0" encoding="UTF-8"?>';
         $rssfeed .= '<rss version="2.0">';
         $rssfeed .= '<channel>';
