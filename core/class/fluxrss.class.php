@@ -88,8 +88,9 @@ class fluxrssCmd extends cmd {
     public function execute($_options = null) {
             $eqLogic = $this->getEqLogic();
             $message = explode("|", trim($_options['message']));
-            $description = $message[0];
-            $link = $message[1];
+            $description = (isset($message[0])) ? $message[0]:'';
+            $link = (isset($message[1])) ? $message[1]:'';
+            $item = '';
             $item .= '<item>';
             $item .= '<title>' . trim($_options['title']) . '</title>';
             $item .= '<description>' . $description . '</description>';
