@@ -44,7 +44,7 @@ class fluxrss extends eqLogic {
     }
 
     public function updateRss($item) {
-        log::add('fluxrss', 'debug', 'Index : ' . $index . ' - Items : ' . $items);
+        log::add('fluxrss', 'debug', 'Item : ' . $item);
         $rssfeed = '<?xml version="1.0" encoding="UTF-8"?>';
         $rssfeed .= '<rss version="2.0">';
         $rssfeed .= '<channel>';
