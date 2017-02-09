@@ -1,0 +1,3 @@
+=== Flux RSS, créer vos flux avec Jeedom
+
+Flux RSS est un plugin permettant de générer des flux RSS. Vous pourrez alors les ajouter dans votre lecteur RSS préféré.

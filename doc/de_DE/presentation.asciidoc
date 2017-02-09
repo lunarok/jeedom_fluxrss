@@ -1,0 +1,3 @@
+=== RSS-Feeds, erstellen Sie Ihren Stream mit Jeedom
+
+RSS-Feed ist ein Plugin, um RSS-Feeds zu generieren. Sie können sie dann zu Ihren bevorzugten RSS-Reader hinzufügen.

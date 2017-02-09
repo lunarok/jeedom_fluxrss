@@ -1,0 +1,5 @@
+[panel,primary]
+.Verwendet das Plugin APIs von Drittanbietern ?
+--
+Nein, das Plugin erzeugt das RSS vor Ort und zeigt Ihnen die Adresse wo es zu finden ist an (für Jeedom)
+--
