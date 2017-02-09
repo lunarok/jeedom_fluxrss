@@ -45,14 +45,14 @@ class fluxrss extends eqLogic {
 
     public function updateRss($item) {
         log::add('fluxrss', 'debug', 'Item : ' . $item);
-        $rssfeed = '<?xml version="1.0" encoding="UTF-8"?>';
-        $rssfeed .= '<rss version="2.0">';
-        $rssfeed .= '<channel>';
-        $rssfeed .= '<title>' . $this->getConfiguration('title') . '</title>';
-        $rssfeed .= '<link>' . $this->getConfiguration('link') . '</link>';
-        $rssfeed .= '<description>' . $this->getConfiguration('description') . '</description>';
-        $rssfeed .= '<language>fr</language>';
-        $rssfeed .= '<copyright>Copyright (C) 2017 Jeedom</copyright>';
+        $rssfeed = '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
+        $rssfeed .= '<rss version="2.0">' . PHP_EOL;
+        $rssfeed .= '<channel>' . PHP_EOL;
+        $rssfeed .= '<title>' . $this->getConfiguration('title') . '</title>' . PHP_EOL;
+        $rssfeed .= '<link>' . $this->getConfiguration('link') . '</link>' . PHP_EOL;
+        $rssfeed .= '<description>' . $this->getConfiguration('description') . '</description>' . PHP_EOL;
+        $rssfeed .= '<language>fr</language>' . PHP_EOL;
+        $rssfeed .= '<copyright>Copyright (C) 2017 Jeedom</copyright>' . PHP_EOL;
 
         $items = '';
         for ($i=0; $i < 10; $i++) {
@@ -73,7 +73,7 @@ class fluxrss extends eqLogic {
         $this->save();
         $rssfeed .= $items;
 
-        $rssfeed .= '</channel>';
+        $rssfeed .= '</channel>' . PHP_EOL;
         $rssfeed .= '</rss>';
 
         if (!file_exists(dirname(__FILE__) . '/../../data')) {
@@ -94,12 +94,12 @@ class fluxrssCmd extends cmd {
             $description = (isset($message[0])) ? $message[0]:'';
             $link = (isset($message[1])) ? $message[1]:'';
             $item = '';
-            $item .= '<item>';
-            $item .= '<title>' . trim($_options['title']) . '</title>';
-            $item .= '<description>' . $description . '</description>';
-            $item .= '<link>' . $link . '</link>';
-            $item .= '<pubDate>' . date("D, d M Y H:i:s O", strtotime('now')) . '</pubDate>';
-            $item .= '</item>';
+            $item .= '<item>' . PHP_EOL;
+            $item .= '<title>' . trim($_options['title']) . '</title>' . PHP_EOL;
+            $item .= '<description>' . $description . '</description>' . PHP_EOL;
+            $item .= '<link>' . $link . '</link>' . PHP_EOL;
+            $item .= '<pubDate>' . date("D, d M Y H:i:s O", strtotime('now')) . '</pubDate>' . PHP_EOL;
+            $item .= '</item>' . PHP_EOL;
             $eqLogic->updateRss($item);
     }
 
