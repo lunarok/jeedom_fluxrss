@@ -96,7 +96,7 @@ class fluxrssCmd extends cmd {
             $item = '';
             $item .= '<item>' . PHP_EOL;
             $item .= '<title>' . trim($_options['title']) . '</title>' . PHP_EOL;
-            $item .= '<description>' . $description . '</description>' . PHP_EOL;
+            $item .= '<description><![CDATA[' . $description . ']]></description>' . PHP_EOL;
             $item .= '<link>' . $link . '</link>' . PHP_EOL;
             $item .= '<pubDate>' . date("D, d M Y H:i:s O", strtotime('now')) . '</pubDate>' . PHP_EOL;
             $item .= '</item>' . PHP_EOL;
