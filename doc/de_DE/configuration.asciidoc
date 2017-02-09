@@ -1,23 +1,23 @@
-=== Configuration du plugin
+=== Plugin Konfiguration
 
-Il n'y a pas de configuration du plugin
+Es gibt keine Konfiguration des Plugins
 
-==== Configuration de l'équipement
+==== Geräte Konfiguration
 
-Chaque équipement à 3 paramètres à remplir :
+Für jedes Gerät sind 3 Parameter zu vervollständigen :
 
-  - Titre
+  - Titel
 
   - Adresse
 
-  - Description
+  - Beschreibung
 
-Après sauvegarde, on aura accès à l'URL du flux RSS
+Nach dem Speichern haben Sie Zugriff auf die URL des RSS-Feeds
 
-Chaque équipement contient une seule commande message :
+Jedes Gerät enthält eine einzelne Befehlsnachricht :
 
-  - Titre : deviendra le titre de l'item du flux
+  -Titel : werden der Titel des RSS-Feeds
 
-  - Message : le contenu de l'item
+  - Nachricht : der Inhalt Artikel
 
-Chaque flux conserve les 10 derniers items uniquement
+Jeder Stream enthält nur die letzten 10 Artikel

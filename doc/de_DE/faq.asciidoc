@@ -1,5 +1,5 @@
 [panel,primary]
-.Est-ce que le plugin utilise des API tiers ?
+.Verwendet das Plugin APIs von Drittanbietern ?
 --
-Non le plugin génère le RSS en local et vous donne l'adresse à laquelle il est dispo (sur Jeedom)
+Nein, das Plugin erzeugt das RSS vor Ort und zeigt Ihnen die Adresse wo es zu finden ist an (für Jeedom)
 --
