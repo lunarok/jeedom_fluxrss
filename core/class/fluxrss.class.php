@@ -69,7 +69,7 @@ class fluxrss extends eqLogic {
 
         $items = '';
         for ($i=0; $i < 10; $i++) {
-            $index = 10 - $i;
+            $index = 20 - $i;
             $previous = $index - 1;
             if ($index != 1) {
                 if ($this->getConfiguration('item'.$previous,'') != '') {
