@@ -32,6 +32,19 @@ class fluxrss extends eqLogic {
             $fluxrssCmd->setSubType('message');
             $fluxrssCmd->save();
         }
+	    
+	$fluxrssCmd = fluxrssCmd::byEqLogicIdAndLogicalId($this->getId(),'reset');
+        if (!is_object($fluxrssCmd)) {
+            log::add('fluxrss', 'debug', 'Création de la commande reset');
+            $fluxrssCmd = new fluxrssCmd();
+            $fluxrssCmd->setName(__('Reset du Flux', __FILE__));
+            $fluxrssCmd->setEqLogic_id($this->getId());
+            $fluxrssCmd->setEqType('fluxrss');
+            $fluxrssCmd->setLogicalId('reset');
+            $fluxrssCmd->setType('action');
+            $fluxrssCmd->setSubType('other');
+            $fluxrssCmd->save();
+        }
 
         /*if (!file_exists(dirname(__FILE__) . '/../../data' . $this->getId())) {
 			$this->updateRss('');
@@ -83,6 +96,11 @@ class fluxrss extends eqLogic {
         fwrite($myfile, $rssfeed);
         fclose($myfile);
     }
+	
+public function resetRss() {
+        log::add('fluxrss', 'debug', 'Reset');
+        unlink(dirname(__FILE__) . '/../../data/' . $this->getId());
+    }
 
 }
 
@@ -90,17 +108,21 @@ class fluxrssCmd extends cmd {
 
     public function execute($_options = null) {
             $eqLogic = $this->getEqLogic();
-            $message = explode("|", trim($_options['message']));
-            $description = (isset($message[0])) ? $message[0]:'';
-            $link = (isset($message[1])) ? $message[1]:'';
-            $item = '';
-            $item .= '<item>' . PHP_EOL;
-            $item .= '<title>' . trim($_options['title']) . '</title>' . PHP_EOL;
-            $item .= '<description><![CDATA[' . $description . ']]></description>' . PHP_EOL;
-            $item .= '<link>' . $link . '</link>' . PHP_EOL;
-            $item .= '<pubDate>' . date("D, d M Y H:i:s O", strtotime('now')) . '</pubDate>' . PHP_EOL;
-            $item .= '</item>' . PHP_EOL;
-            $eqLogic->updateRss($item);
+	    if ($this->getLogicalId() == 'reset') {
+		    $eqLogic->resetRss();
+	    } else {
+		    $message = explode("|", trim($_options['message']));
+		    $description = (isset($message[0])) ? $message[0]:'';
+		    $link = (isset($message[1])) ? $message[1]:'';
+		    $item = '';
+		    $item .= '<item>' . PHP_EOL;
+		    $item .= '<title>' . trim($_options['title']) . '</title>' . PHP_EOL;
+		    $item .= '<description><![CDATA[' . $description . ']]></description>' . PHP_EOL;
+		    $item .= '<link>' . $link . '</link>' . PHP_EOL;
+		    $item .= '<pubDate>' . date("D, d M Y H:i:s O", strtotime('now')) . '</pubDate>' . PHP_EOL;
+		    $item .= '</item>' . PHP_EOL;
+		    $eqLogic->updateRss($item);
+	    }
     }
 
 }
