@@ -68,7 +68,7 @@ class fluxrss extends eqLogic {
         $rssfeed .= '<copyright>Copyright (C) 2017 Jeedom</copyright>' . PHP_EOL;
 
         $items = '';
-        for ($i=0; $i < 10; $i++) {
+        for ($i=0; $i < 20; $i++) {
             $index = 20 - $i;
             $previous = $index - 1;
             if ($index != 1) {
