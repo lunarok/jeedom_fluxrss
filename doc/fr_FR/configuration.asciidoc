@@ -6,11 +6,14 @@ Il n'y a pas de configuration du plugin
 
 Chaque équipement à 3 paramètres à remplir :
 
-  - Titre
+  - Titre du Flux
 
-  - Adresse
+  - Lien du Flux
 
-  - Description
+  - Description du Flux
+  
+  - Nombre d'items du Flux (10,15,20,25,30)
+  
 
 Après sauvegarde, on aura accès à l'URL du flux RSS
 
@@ -20,4 +23,3 @@ Chaque équipement contient une seule commande message :
 
   - Message : le contenu de l'item
 
-Chaque flux conserve les 10 derniers items uniquement
