@@ -68,8 +68,12 @@ class fluxrss extends eqLogic {
         $rssfeed .= '<copyright>Copyright (C) 2017 Jeedom</copyright>' . PHP_EOL;
 
         $items = '';
-        for ($i=0; $i < 10; $i++) {
-            $index = 10 - $i;
+		
+		$nbitems = (int)$this->getConfiguration('nbitems',10);
+      	log::add('fluxrss', 'debug', 'NbItems:'.$nbitems);
+	
+        for ($i=0; $i < $nbitems; $i++) {
+            $index = $nbitems - $i;
             $previous = $index - 1;
             if ($index != 1) {
                 if ($this->getConfiguration('item'.$previous,'') != '') {
