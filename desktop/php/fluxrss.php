@@ -66,6 +66,7 @@ $eqLogics = eqLogic::byType('fluxrss');
         </ul>
         <div class="tab-content" style="height:calc(100% - 50px);overflow:auto;overflow-x: hidden;">
             <div role="tabpanel" class="tab-pane active" id="eqlogictab">
+                <br>
                 <form class="form-horizontal">
                     <fieldset>
                         <div class="form-group">
@@ -128,7 +129,19 @@ $eqLogics = eqLogic::byType('fluxrss');
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">{{URL du flux RSS}}</label>
+                            <label class="col-sm-3 control-label">{{Nombre d'items du Flux}}</label>
+                            <div class="col-sm-3">
+								<select class="form-control eqLogicAttr" data-l1key="configuration" data-l2key="nbitems">
+                                	<option value selected="selected">10</option>
+       								<option value="15">15</option>
+      								<option value="20">20</option>
+       								<option value="25">25</option>
+       								<option value="30">30</option>
+    							</select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">{{URL du Flux RSS}}</label>
                             <div class="col-sm-3">
                                 <span class="eqLogicAttr" data-l1key="configuration" data-l2key="url"></span>
                             </div>
@@ -139,6 +152,7 @@ $eqLogics = eqLogic::byType('fluxrss');
                 </form>
             </div>
             <div role="tabpanel" class="tab-pane" id="commandtab">
+                <br>
                 <table id="table_cmd" class="table table-bordered table-condensed">
                     <thead>
                         <tr>
