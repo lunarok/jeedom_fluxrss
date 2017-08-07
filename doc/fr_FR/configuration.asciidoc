@@ -4,7 +4,7 @@ Il n'y a pas de configuration du plugin
 
 ==== Configuration de l'équipement
 
-Chaque équipement à 3 paramètres à remplir :
+Chaque équipement à 4 paramètres à remplir :
 
   - Titre du Flux
 
