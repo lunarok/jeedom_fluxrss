@@ -4,13 +4,16 @@ Es gibt keine Konfiguration des Plugins
 
 ==== Geräte Konfiguration
 
-Für jedes Gerät sind 3 Parameter zu vervollständigen :
+Chaque équipement à 4 paramètres à remplir :
 
-  - Titel
+  - Titre du Flux
 
-  - Adresse
+  - Lien du Flux
 
-  - Beschreibung
+  - Description du Flux
+  
+  - Nombre d'items du Flux (10,15,20,25,30)
+  
 
 Nach dem Speichern haben Sie Zugriff auf die URL des RSS-Feeds
 
@@ -19,5 +22,3 @@ Jedes Gerät enthält eine einzelne Befehlsnachricht :
   -Titel : werden der Titel des RSS-Feeds
 
   - Nachricht : der Inhalt Artikel
-
-Jeder Stream enthält nur die letzten 10 Artikel
