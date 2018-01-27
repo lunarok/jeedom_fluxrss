@@ -22,7 +22,7 @@
         "Titre du Flux": "Feed Titel",
         "Lien du Flux": "Feed Link",
         "Description du Flux": "Feed Beschreibung",
-        "Nombre d'items du Flux":"Nombre d'items du Flux",
+        "Nombre d'items du Flux":"Anzahl der Flux Elemente",
         "URL du flux RSS": "RSS-Feed URL"
     },
     "plugins\/fluxrss\/desktop\/js\/fluxrss.js": {
@@ -33,6 +33,6 @@
     },
     "plugins\/fluxrss\/core\/class\/fluxrss.class.php": {
         "Nouvel Article": "Neue Artikel",
-        "Reset du Flux": "Reset du Flux"
+        "Reset du Flux": "Flux zurücksetzen"
     }
 }

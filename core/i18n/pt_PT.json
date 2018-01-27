@@ -1,0 +1,38 @@
+{
+    "plugins\/fluxrss\/desktop\/php\/fluxrss.php": {
+        "Ajouter un équipement": "Ajouter un équipement",
+        "Ajouter": "Ajouter",
+        "Rechercher": "Rechercher",
+        "Mes fluxrsss": "Mes fluxrsss",
+        "Sauvegarder": "Sauvegarder",
+        "Supprimer": "Supprimer",
+        "Configuration avancée": "Configuration avancée",
+        "Equipement": "Equipement",
+        "Commandes":"Commandes",
+        "Equipement fluxrss":"Equipement fluxrss",
+        "Nom de l'équipement fluxrss":"Nom de l'équipement fluxrss",
+        "Actions sur fluxrss": "Actions sur fluxrss",  
+        "Objet parent": "Objet parent",
+        "Aucun": "Aucun",
+        "Catégorie": "Catégorie",
+        "Activer": "Activer",
+        "Visible": "Visible",
+        "Nom":"Nom",
+        "Paramètres": "Paramètres",
+        "Titre du Flux": "Titre du Flux",
+        "Lien du Flux": "Lien du Flux",
+        "Description du Flux": "Description du Flux",
+        "Nombre d'items du Flux":"Nombre d'items du Flux",
+        "URL du flux RSS": "URL du flux RSS"
+    },
+    "plugins\/fluxrss\/desktop\/js\/fluxrss.js": {
+        "Nom info": "Nom info",
+        "Afficher": "Afficher",
+        "Tester": "Tester",
+        "Nom commande": "Nom commande"
+    },
+    "plugins\/fluxrss\/core\/class\/fluxrss.class.php": {
+        "Nouvel Article": "Nouvel Article",
+        "Reset du Flux": "Reset du Flux"
+    }
+}
