@@ -1,7 +1,7 @@
 {
     "plugins\/fluxrss\/desktop\/php\/fluxrss.php": {
         "Ajouter un équipement": "Agregar un dispositivo",
-        "Ajouter": "Ajouter",
+        "Ajouter": "Añadir",
         "Rechercher": "Buscar",
         "Mes fluxrsss": "Mis fluxrsss",
         "Sauvegarder": "Salvar",
@@ -22,7 +22,7 @@
         "Titre du Flux": "Título de Flux",
         "Lien du Flux": "Enlace de Flux",
         "Description du Flux": "Descripción de Flux",
-        "Nombre d'items du Flux":"Nombre d'items du Flux",
+        "Nombre d'items du Flux":"Número de items de Flux",
         "URL du flux RSS": "URL de flux RSS"
     },
     "plugins\/fluxrss\/desktop\/js\/fluxrss.js": {
@@ -33,6 +33,6 @@
     },
     "plugins\/fluxrss\/core\/class\/fluxrss.class.php": {
         "Nouvel Article": "Artículo nuevo",
-        "Reset du Flux": "Reset du Flux"
+        "Reset du Flux": "Resetear Flux"
     }
 }
