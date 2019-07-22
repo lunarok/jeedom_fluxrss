@@ -4,7 +4,7 @@
 	"description" : "Ce plugin permet à Jeedom de créer des flux RSS et de publier des informations dessus. Ainsi vous pouvez suivre votre domotique au travers de votre lecteur RSS préféré.",
 	"licence" : "AGPL",
 	"author" : "lunarok",
-	"require" : "2.4",
+	"require" : "3.3.24",
 	"category" : "communication",
 	"language" : ["fr_FR","en_US"],
 	"compatibility" : ["miniplus","smart","rpi","docker","diy","mobile"],
