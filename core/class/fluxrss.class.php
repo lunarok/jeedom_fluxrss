@@ -69,7 +69,7 @@ class fluxrss extends eqLogic {
 
         $items = '';
 		
-		$nbitems = (int)$this->getConfiguration('nbitems',10);
+		$nbitems = (int)$this->getConfiguration('nbitems',1);
       	log::add('fluxrss', 'debug', 'NbItems:'.$nbitems);
 	
         for ($i=0; $i < $nbitems; $i++) {
