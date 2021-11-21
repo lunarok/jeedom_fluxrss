@@ -134,8 +134,8 @@ $eqLogics = eqLogic::byType('fluxrss');
 							<label class="col-sm-3 control-label">{{Nombre d'items du Flux}}</label>
 							<div class="col-sm-3">
 								<select class="form-control eqLogicAttr" data-l1key="configuration" data-l2key="nbitems">
-									<option value selected="selected">1</option>
-                                    <option value="10">10</option>
+									<option value="1">1</option>
+                                    <option value="10" selected>10</option>
 									<option value="15">15</option>
 									<option value="20">20</option>
 									<option value="25">25</option>
